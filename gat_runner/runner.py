@@ -3,10 +3,11 @@ import logging
 
 import random
 
-from gat_games.games import *
 from gat_games.game_engine.engine import GATLogger
+from gat_games.games import *
 from gat_runner.languages import GATFileFactory
-from gat_runner.players.gat_player import GATPlayer
+# Important to update all Game.Player references
+from gat_runner.players import *
 
 
 def play_gat(Game, seed, players, log_level=logging.INFO, player_log=False):

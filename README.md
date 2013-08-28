@@ -69,6 +69,10 @@ pip install gat-runner --upgrade --no-deps
 Change Log
 -------------
 
+#### 0.0.2 (2013/08/17)
+
+* [new] ...
+
 #### 0.0.1 (2013/03/30)
 
 * [new] ...

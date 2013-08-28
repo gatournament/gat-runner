@@ -10,15 +10,15 @@ tests_require = [
 install_requires = [
   'six==1.3.0',
   'simplejson==3.1.3',
-  'gat-games==0.0.3',
+  'gat-games==0.0.2',
 ]
 
 setup(name='%s' % PROJECT_NAME,
       url='https://github.com/gatournament/%s' % PROJECT_NAME,
       author="gatournament",
       author_email='info@gatournament.com',
-      keywords='',
-      description='',
+      keywords='gat game algorithms tournament',
+      description='GAT Runner',
       license='MIT',
       classifiers=[
           'Operating System :: OS Independent',

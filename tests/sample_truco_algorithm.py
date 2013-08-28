@@ -5,7 +5,7 @@ sys.path.append(os.getcwd())
 
 from functools import update_wrapper
 
-import gat_games.gat_json as json
+import gat_games.game_engine.gat_json as json
 
 print('\n')
 print('Running Sample Truco Algorithm')

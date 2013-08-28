@@ -25,7 +25,7 @@ class PlayFileAgainstRandomAlgorithmTests(unittest.TestCase):
     def test_play_file_against_random_algorithm(self):
         full_path = os.path.realpath(__file__)
         dirpath, filename = os.path.split(full_path)
-        filepath = os.path.join(dirpath, 'sample_truco_pipe_algorithm.py')
+        filepath = os.path.join(dirpath, 'sample_truco_algorithm.py')
         print(filepath)
         play_file_against_random_algorithm(Truco, 1, filepath)
 
@@ -34,7 +34,7 @@ class PlayFileAgainstFileTests(unittest.TestCase):
     def test_play_file_against_file(self):
         full_path = os.path.realpath(__file__)
         dirpath, filename = os.path.split(full_path)
-        filepath = os.path.join(dirpath, 'sample_truco_pipe_algorithm.py')
+        filepath = os.path.join(dirpath, 'sample_truco_algorithm.py')
         print(filepath)
         play_file_against_file(Truco, 1, filepath, filepath)
 

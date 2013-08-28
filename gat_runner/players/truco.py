@@ -4,9 +4,6 @@ from gat_games.game_engine.cardgame import *
 from gat_games.games.truco import *
 from gat_runner.players.gat_player import GATPlayer
 
-# TODOs:
-# who wins start next round => must_start_new_cycle BUG?
-
 
 class TrucoGATPlayer(GATPlayer):
     def process_response(self, response):
@@ -34,3 +31,5 @@ class TrucoGATPlayer(GATPlayer):
     def reject_truco(self):
         self.game.execute_command(RejectTruco(self))
 
+
+Truco.Player = TrucoGATPlayer
