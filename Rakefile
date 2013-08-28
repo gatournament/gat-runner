@@ -118,7 +118,7 @@ DIST_DIR = 'dist'
 PACKAGE_NAME = "gat-runner"
 BUILD_DIR = "#{PACKAGE_NAME}-build"
 VE_DIR = "env27/lib/python2.7/site-packages"
-DEPENDENCIES = ['simplejson', 'six.py']
+DEPENDENCIES = ['six.py', 'simplejson', 'gat_games']
 task :package do
   sh "rm -rf #{DIST_DIR}"
   sh "rm -rf #{BUILD_DIR}"
@@ -126,10 +126,11 @@ task :package do
   sh "mkdir #{BUILD_DIR}"
   sh "touch #{BUILD_DIR}/__init__.py"
   sh "cp __main__.py #{BUILD_DIR}"
-  sh "cp -R gat_games #{BUILD_DIR}"
+  sh "cp -R gat_runner #{BUILD_DIR}"
   DEPENDENCIES.each { |dep|
     sh "cp -r #{VE_DIR}/#{dep} #{BUILD_DIR}"
   }
+  sh "find #{BUILD_DIR} -name '*.pyc' -delete"
   sh "cd #{BUILD_DIR} && zip -r ../#{PACKAGE_NAME}.zip * && cd -" # tricky to __main__stay in the root directory
   sh "echo '#!/usr/bin/env python' | cat - #{PACKAGE_NAME}.zip > #{PACKAGE_NAME}"
   sh "chmod +x #{PACKAGE_NAME}"
@@ -155,7 +156,7 @@ task :package_windows => [:package] do
 end
 
 task :packages => [:package_mac, :package_linux, :package_windows] do
-  sh "cp VERSION #{DIST_DIR}/latest-version"
+  File.open("#{DIST_DIR}/latest-version", "w") {|f| f.write(VERSION) }
 end
 
 namespace :integration_tests do
