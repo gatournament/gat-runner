@@ -1,0 +1,3 @@
+six==1.3.0
+simplejson==3.3.0
+gat-games==0.0.2
